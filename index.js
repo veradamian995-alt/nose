@@ -77,3 +77,93 @@ function ejercicio6(){
     console.log(numero + " no es un numero par.");
   } 
 }
+function ejercicio7(){
+  var texto = prompt("Introduce algo");
+  if(texto == texto.toUpperCase()){
+  console.log("esta escrito en mayuscula");
+  }
+  else if(texto = texto.toLowerCase){
+    console.log("esta escrio en minuscula");
+  }
+  else{
+    console.log("esta escrito mezclado");
+  }
+
+
+}
+function ejercicio8(){
+let texto = prompt("Introduce algo");
+let str = texto.replaceAll(" "," ").toLocaleLowerCase();
+let arrStr = str.split("").reverse().join("");
+if(str == arrStr){
+  console.log("El texto es: ", texto );
+  console.log("El texto es un palindromo")
+}else {
+  console.log("El texto es: ", texto );
+  console.log("El texto no es un palindromo");
+}
+
+}
+function ejercicio9(){
+
+  let p1 = new Persona("Benja", 16, "Masculino");
+  console.log(p1.obtDetalles());
+
+  let p2 = new Estudiante("Arturo", 16, "Masculino", 4, 15);
+  console.log(p2.registar());
+
+  let p3 = new Profesor("Lucio", 20, "Masculino", "Algoritmos", 10);
+  console.log(p3.asignar());
+}
+function Persona(nombre, edad, genero){
+  this.nombre = nombre;
+  this.edad = edad;
+  this.genero = genero;
+}
+
+Persona.prototype.obtDetalles = function() {
+  console.log(`Nombre: ${this.nombre}, Edad: ${this.edad}, Genero: ${this.genero}`);
+};
+
+function Estudiante(nombre, edad, genero, curso, grupo){
+  Persona.call(this, nombre, edad, genero);
+  this.curso = curso;
+  this.grupo = grupo;
+}
+
+Estudiante.prototype = Object.create(Persona.prototype);
+Estudiante.prototype.constructor = Estudiante;
+
+Estudiante.prototype.registar = function(){
+  console.log(`${this.nombre} ha sido registrado en el curso ${this.curso}, grupo ${this.grupo}.`);
+};
+function Profesor(nombre, edad, genero, asignatura, nivel){
+  Persona.call(this, nombre, edad, genero);
+  this.asignatura = asignatura;
+  this.nivel = nivel;
+}
+
+Profesor.prototype = Object.create(Persona.prototype);
+Profesor.prototype.constructor = Profesor;
+
+Profesor.prototype.asignar = function(){
+  console.log(`${this.nombre} ha sido asignado en la asignatura ${this.asignatura}, nivel ${this.nivel}.`);
+}
+
+function ejercicio10(){
+  let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  for(var i = 0; i < 36000; i++)
+    {
+    let dado1 = Math.floor(Math.random() * 6) + 1;
+    let dado2 = Math.floor(Math.random() * 6) + 1;
+    let suma = dado1 + dado2;
+    arr[suma] = arr[suma] + 1;
+  }
+  console.log(arr);
+   for(let i=2; i< arr.length; i++){
+       console.log("el numero " + i + " salio " +arr[i])
+  }
+  console.log(arr);
+
+
+}
