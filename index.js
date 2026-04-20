@@ -8,7 +8,7 @@ function ejercicio1(){
   var valores = [true, 5, false, "hola", "adios", 2];
   if (valores[3].length > valores[4].length) {
     console.log(valores[0]);
-  } else {
+  } else{
     console.log(valores[2]);
   }
   var suma = valores[1] + valores[5];
@@ -60,18 +60,7 @@ function ejercicio5(){
 }
 function ejercicio6(){
   let numero = prompt("Introduce un numero:");
-  par = true;
-  if (numero % 2 !== 0) {
-    par = false;
-  } else {
-    for (let i = 2; i < numero; i++) {
-      if (numero % i === 0) {
-        par = false;
-        break;
-      }
-    }
-  }
-  if (par) {
+  if (numero % 2 === 0) {
     console.log(numero + " es un numero par.");
   } else {    
     console.log(numero + " no es un numero par.");
