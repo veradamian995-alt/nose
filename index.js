@@ -140,7 +140,7 @@ Profesor.prototype.asignar = function(){
 }
 
 function ejercicio10(){
-  let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   for(var i = 0; i < 36000; i++)
     {
     let dado1 = Math.floor(Math.random() * 6) + 1;
@@ -148,7 +148,6 @@ function ejercicio10(){
     let suma = dado1 + dado2;
     arr[suma] = arr[suma] + 1;
   }
-  console.log(arr);
    for(let i=2; i< arr.length; i++){
        console.log("el numero " + i + " salio " +arr[i])
   }
